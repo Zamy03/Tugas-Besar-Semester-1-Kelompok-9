@@ -11,7 +11,7 @@ require 'cek.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Stock Barang</title>
+    <title>Barang Keluar</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -23,7 +23,7 @@ require 'cek.php';
         <a class="navbar-brand ps-3" href="index.html">ShoJo</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-
+        
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
@@ -54,7 +54,7 @@ require 'cek.php';
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Stock Barang</h1>
+                    <h1 class="mt-4">Barang Keluar</h1>
 
                     <div class="card mb-4">
                         <div class="card-header">
@@ -116,20 +116,34 @@ require 'cek.php';
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Tambah Barang</h4>
+                <h4 class="modal-title">Tambah Barang Keluar</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <!-- Modal body -->
             <form method="post">
             <div class="modal-body">
-                <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control" required>
+
+                <select name="barangnya" class="form-control">
+                    <?php
+                        $ambilsemuadatanya = mysqli_query($conn, "select * from stock");
+                        while ($fetcharray = mysqli_fetch_array($ambilsemuadatanya)) {
+                            $namabarang = $fetcharray['namabarang'];
+                            $idbarang = $fetcharray['idbarang'];
+                    ?>
+
+                            <option value="<?= $idbarang; ?>"><?= $namabarang; ?></option>
+
+                    <?php
+                        }
+                    ?>
+                </select>
                 <br>
-                <input type="text" name="deskripsi" placeholder="Deskripsi Barang" class="form-control" required>
+                <input type="text" name="penerima" class="form-control" placeholder="Penerima" required>
                 <br>
-                <input type="number" name="stock" class="form-control" placeholder="Stock" required>
+                <input type="number" name="qty" class="form-control" placeholder="Quantity" required>
                 <br>
-                <button type="submit" class="btn btn-primary" name="addnewbarang">Submit</button>
+                <button type="submit" class="btn btn-primary" name="addbarangkeluar">Submit</button>
             </div>
             </form>
 
