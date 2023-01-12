@@ -67,19 +67,35 @@ require 'cek.php';
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
+                                        <th>Tanggal</th>
                                         <th>Nama Barang</th>
                                         <th>Deskripsi</th>
                                         <th>Stock</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Bang</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                    </tr>
+                                    <?php
+                                    $ambilsemuadatastock = mysqli_query($conn, "select * from masuk m, stock s where s.idbarang = m.idbarang");
+                                    while ($data = mysqli_fetch_array($ambilsemuadatastock)) {
+                                        $tanggal = $data['tanggal'];
+                                        $namabarang = $data['namabarang'];
+                                        $qty = $data['qty'];
+                                        $keterangan = $data['keterangan'];
+
+                                    ?>
+
+                                        <tr>
+                                            <td><?=$tanggal; ?></td>
+                                            <td><?=$namabarang; ?></td>
+                                            <td><?=$qty; ?></td>
+                                            <td><?=$keterangan; ?></td>
+                                        </tr>
+
+                                    <?php
+                                    };
+                                    ?>
+
+                                </tbody>
                                 </tbody>
                             </table>
                         </div>
