@@ -9,3 +9,8 @@ background: transparent;
 .button_search :hover {
     color:  #2196f3;
 }
+.navbar-brand img {
+    width: fit-content;
+    height: fit-content;
+    
+}
