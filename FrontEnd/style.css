@@ -1,0 +1,11 @@
+.brand {
+    background: linear-gradient(#e91e63, #2196f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+.button_search {
+background: transparent;
+}
+.button_search :hover {
+    color:  #2196f3;
+}
