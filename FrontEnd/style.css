@@ -1,16 +1,56 @@
 .brand {
-    background: linear-gradient(#e91e63, #2196f3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  background: linear-gradient(#e91e63, #2196f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .button_search {
-background: transparent;
+  background: transparent;
+  align-items: center;
 }
 .button_search :hover {
-    color:  #2196f3;
+  color: #2196f3;
 }
 .navbar-brand img {
-    width: fit-content;
-    height: fit-content;
-    
+  width: 100px;
+  height: 40px;
+}
+.footer {
+  margin-top: 150px;
+  width: 100%;
+  padding: 100px 15%;
+  background: #555;
+  color: #fff;
+  display: flex;
+}
+.footer div {
+  text-align: center;
+}
+.col-2 {
+  flex-grow: 2;
+}
+.footer div h3 {
+  font-weight: 300;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+.col-1 a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 10px;
+}
+form input {
+  width: 400px;
+  height: 45px;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  outline: none;
+  border: none;
+}
+.social-icons {
+  font-size: 22px;
+  margin: 10px;
+  cursor: pointer;
 }
