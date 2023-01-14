@@ -25,66 +25,6 @@ if (!isset($_SESSION['log'])) {
 }
 
 ?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Login - Admin</title>
-    <link href="css/styles.css" rel="stylesheet" />
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-</head>
-
-<body class="bg-primary">
-    <div id="layoutAuthentication">
-        <div id="layoutAuthentication_content">
-            <main>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-5">
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header">
-                                    <h3 class="text-center font-weight-light my-4">Login</h3>
-                                </div>
-                                <div class="card-body">
-                                    <form method="post">
-                                        <div class="form-floating mb-3">
-                                            <input class="form-control" name="email" id="inputEmail" type="email" placeholder="name@example.com" />
-                                            <label for="inputEmail">Email address</label>
-                                        </div>
-                                        <div class="form-floating mb-3">
-                                            <input class="form-control" name="password" id="inputPassword" type="password" placeholder="Password" />
-                                            <label for="inputPassword">Password</label>
-                                        </div>
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                            <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="small" href="password.html">Forgot Password?</a>
-                                            <button class="btn btn-primary" href="index.php" name="login">Login</button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-</body> -->
-
-<!-- </html> -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -97,7 +37,10 @@ if (!isset($_SESSION['log'])) {
     <script src="https://kit.fontawesome.com/1ef1772957.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="style_sign_in.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
+ 
   <body>
     <div class="animate__animated animate__zoomIn animate__faster">
       <div class="wrapper">
@@ -115,14 +58,6 @@ if (!isset($_SESSION['log'])) {
               <input class="control" id="password" type="password" required maxlength="12" />
               <label for="">Password</label>
             </div>
-            
-            <div class="remember">
-              <label><input type="checkbox" />Remember Me</label>
-            </div>
-            
-            <div class="forgot-pass">
-              <a href="#">Forgot Password</a>
-            </div>
 
             <button type="submit" class="btn">Sign In</button>
             <div class="sign-link">
@@ -132,6 +67,32 @@ if (!isset($_SESSION['log'])) {
         </div>
       </div>
     </div>
-    <script src="script_sign_in.js"></script>
   </body>
+  <script>
+    $("#register").on("click", function () {
+      $.ajax({
+        url: "cek_login.php",
+        type: "POST",
+        data: { firstname: $("#first_name").val(), lastname: $("#last_name").val(), password: $("#password").val(), email: $("#email").val() },
+        success: function (data) {
+          Swal.fire({
+            title: "Register",
+            text: data,
+            icon: "success",
+
+            confirmButtonColor: "#3085d6",
+
+            confirmButtonText: "Ok",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "login.php";
+            }
+          });
+        },
+        error: function (error) {
+          alert(error);
+        },
+      });
+    });
+  </script>
 </html> 

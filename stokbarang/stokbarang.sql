@@ -54,14 +54,17 @@ CREATE TABLE `login` (
   `iduser` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
+  'first_name' varchar(20) NULL
+  'last_name' varchar(20) NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `login`
 --
 
-INSERT INTO `login` (`iduser`, `email`, `password`) VALUES
-(1, 'agaklain@gmail.com', '12345');
+INSERT INTO `login` (`iduser`, `email`, `password`, 'first_name', 'last_name') VALUES
+(1, 'agaklain@gmail.com', '12345', 'agak', 'Lain');
 
 -- --------------------------------------------------------
 
