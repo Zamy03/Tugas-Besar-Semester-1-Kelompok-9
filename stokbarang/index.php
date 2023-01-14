@@ -114,7 +114,7 @@ require 'cek.php';
                                                     <!-- Modal Header -->
                                                     <div class="modal-header">
                                                         <h4 class="modal-title">Edit Barang</h4>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal">&times;</button>
                                                     </div>
 
                                                     <!-- Modal body -->
@@ -124,6 +124,7 @@ require 'cek.php';
                                                             <br>
                                                             <input type="text" name="deskripsi" value="<?=$deskripsi;?>" class="form-control" required>
                                                             <br>
+                                                            <input type="hidden" name="idb" value="<?=$idb;?>">
                                                             <button type="submit" class="btn btn-primary" name="updatebarang">Submit</button>
                                                         </div>
                                                     </form>
@@ -140,13 +141,14 @@ require 'cek.php';
                                                     <!-- Modal Header -->
                                                     <div class="modal-header">
                                                         <h4 class="modal-title">Hapus Barang</h4>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal">&times;</button>
                                                     </div>
 
                                                     <!-- Modal body -->
                                                     <form method="post">
                                                         <div class="modal-body">
                                                             Apakah Anda Yakin Ingin Menghapus <?=$namabarang;?>?
+                                                            <input type="hidden" name="idb" value="<?=$idb;?>">
                                                             <br>
                                                             <br>
                                                             <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
