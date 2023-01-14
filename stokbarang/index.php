@@ -96,35 +96,35 @@ require 'cek.php';
                                             <td><?= $deskripsi; ?></td>
                                             <td><?= $stock; ?></td>
                                             <td>
-                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit<?=$idb;?>">
+                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit<?= $idb; ?>">
                                                     Edit
                                                 </button>
-                                                
-                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete<?=$idb;?>">
+
+                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete<?= $idb; ?>">
                                                     Delete
                                                 </button>
                                             </td>
                                         </tr>
 
                                         <!-- Edit Modal -->
-                                        <div class="modal fade" id="edit<?=$idb;?>">
+                                        <div class="modal fade" id="edit<?= $idb; ?>">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
 
                                                     <!-- Modal Header -->
                                                     <div class="modal-header">
                                                         <h4 class="modal-title">Edit Barang</h4>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal">&times;</button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"> </button>
                                                     </div>
 
                                                     <!-- Modal body -->
                                                     <form method="post">
                                                         <div class="modal-body">
-                                                            <input type="text" name="namabarang" value="<?=$namabarang;?>" class="form-control" required>
+                                                            <input type="text" name="namabarang" value="<?= $namabarang; ?>" class="form-control" required>
                                                             <br>
-                                                            <input type="text" name="deskripsi" value="<?=$deskripsi;?>" class="form-control" required>
+                                                            <input type="text" name="deskripsi" value="<?= $deskripsi; ?>" class="form-control" required>
                                                             <br>
-                                                            <input type="hidden" name="idb" value="<?=$idb;?>">
+                                                            <input type="hidden" name="idb" value="<?= $idb; ?>">
                                                             <button type="submit" class="btn btn-primary" name="updatebarang">Submit</button>
                                                         </div>
                                                     </form>
@@ -134,21 +134,22 @@ require 'cek.php';
                                         </div>
 
                                         <!-- Delete Modal -->
-                                        <div class="modal fade" id="delete<?=$idb;?>">
+                                        <div class="modal fade" id="delete<?= $idb; ?>">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
 
                                                     <!-- Modal Header -->
                                                     <div class="modal-header">
                                                         <h4 class="modal-title">Hapus Barang</h4>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal">&times;</button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                        </button>
                                                     </div>
 
                                                     <!-- Modal body -->
                                                     <form method="post">
                                                         <div class="modal-body">
-                                                            Apakah Anda Yakin Ingin Menghapus <?=$namabarang;?>?
-                                                            <input type="hidden" name="idb" value="<?=$idb;?>">
+                                                            Apakah Anda Yakin Ingin Menghapus <?= $namabarang; ?>?
+                                                            <input type="hidden" name="idb" value="<?= $idb; ?>">
                                                             <br>
                                                             <br>
                                                             <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
@@ -158,32 +159,33 @@ require 'cek.php';
                                                 </div>
                                             </div>
                                         </div>
+                        </div>
 
-                                    <?php
+                    <?php
                                     };
-                                    
-                                    
-                                    ?>
 
-                                </tbody>
-                            </table>
-                        </div>
+
+                    ?>
+
+                    </tbody>
+                    </table>
                     </div>
                 </div>
-            </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        &middot;
+                        <a href="#">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
