@@ -5,6 +5,7 @@
 }
 .button_search {
   background: transparent;
+  align-items: center;
 }
 .button_search :hover {
   color: #2196f3;
