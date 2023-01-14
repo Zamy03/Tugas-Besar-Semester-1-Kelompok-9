@@ -103,7 +103,7 @@ if (!isset($_SESSION['log'])) {
       <div class="wrapper">
         <div class="form-wrapper sign-in">
           <form action="">
-            <a href="frontend.html" class="close"><h3>x</h3></a>
+            <a href="../FrontEnd/index.html" class="close"><h3>x</h3></a>
             <h2>Sign In</h2>
              
             <div class="input-group">
