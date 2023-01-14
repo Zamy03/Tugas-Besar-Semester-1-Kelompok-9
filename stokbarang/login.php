@@ -45,54 +45,111 @@ if (!isset($_SESSION['log'])) {
     <div class="animate__animated animate__zoomIn animate__faster">
       <div class="wrapper">
         <div class="form-wrapper sign-in">
-          <form action="">
+          <div id="login">
             <a href="../FrontEnd/index.html" class="close"><h3>x</h3></a>
             <h2>Sign In</h2>
-             
-            <div class="input-group">
-              <input type="email" required />
+            <div class="col-lg-6">
+                <div class="input-group">
+                  <div class="form-float mb-3 mb-md-0">
+                    <input type="email" maxlength="50" id="email" required/>
+                    <label for="">Email</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="input-group">
+                  <div class="form-float mb-3 mb-md-0">
+                    <input type="password" required id="password"  maxlength="12" />
+                    <label for="">Password</label>
+                  </div>
+                </div>
+              </div>
+            <!-- <div class="input-group">
+              <input type="email" required maxlength="50" />
               <label for="">Email</label>
             </div>
              
             <div class="input-group">
               <input class="control" id="password" type="password" required maxlength="12" />
               <label for="">Password</label>
-            </div>
+            </div> -->
 
-            <button type="submit" class="btn">Sign In</button>
+            <button class="btn" id="login">Sign In</button>
             <div class="sign-link">
               <p>Don't have an account?<a href="register.html" class="signUp-link">Sign Up</a></p>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
   </body>
   <script>
-    $("#register").on("click", function () {
-      $.ajax({
-        url: "cek_login.php",
-        type: "POST",
-        data: { firstname: $("#first_name").val(), lastname: $("#last_name").val(), password: $("#password").val(), email: $("#email").val() },
-        success: function (data) {
-          Swal.fire({
-            title: "Register",
-            text: data,
-            icon: "success",
-
-            confirmButtonColor: "#3085d6",
-
-            confirmButtonText: "Ok",
-          }).then((result) => {
-            if (result.isConfirmed) {
-              window.location.href = "login.php";
-            }
-          });
-        },
-        error: function (error) {
-          alert(error);
-        },
-      });
+    $("#login").on("click", function () {
+      if (
+        $("#email").val() != "" && $("#password").val() != "" 
+        ) {
+        $.ajax({
+          url: "cek.php",
+          type: "POST",
+          data: {email: $("#email").val(), password: $("#password").val() },
+          success: function (data) {
+                window.location.href = "index.php";
+              
+          },
+          error: function (error) {
+            alert(error);
+          },
+        });
+      } else if ($("#email").val() == "") {
+        Swal.fire({
+          title: "WRONG",
+          text: "Email",
+          icon: "warning",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "OK",
+        });
+      } else if ($("#password").val() == "") {
+        Swal.fire({
+          title: "WRONG",
+          text: "Password",
+          icon: "warning",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "OK",
+        });
+      } 
     });
+
+    // $("#register").on("click", function () {
+    //   if (
+    //     $("#password").val() != "" &&
+    //     $("#email").val() != "" &&
+    //   ) {
+
+      // $.ajax({
+      //   url: "cek_login.php",
+      //   type: "POST",
+      //   data: { firstname: $("#first_name").val(), lastname: $("#last_name").val(), password: $("#password").val(), email: $("#email").val() },
+      //   success: function (data) {
+      //     window.location.href = "login.php";
+      //     // Swal.fire({
+      //     //   title: "Register",
+      //     //   text: data,
+      //     //   icon: "success",
+
+      //     //   confirmButtonColor: "#3085d6",
+
+      //     //   confirmButtonText: "Ok",
+      //     // }).then((result) => {
+      //     //   if (result.isConfirmed) {
+      //     //     window.location.href = "login.php";
+      //     //   }
+      //     // });
+      //   });
+      //   },
+      //   error: function (error) {
+      //     alert(error);
+      //   },
+      // }
+    // });
   </script>
 </html> 
