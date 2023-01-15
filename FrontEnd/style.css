@@ -1,3 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Ubuntu&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+}
+body {
+  position: relative;
+  /* display: flex; */
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 100vh;
+}
 .brand {
   background: linear-gradient(#e91e63, #2196f3);
   -webkit-background-clip: text;
@@ -14,41 +30,58 @@
   width: 100px;
   height: 40px;
 }
-.footer {
-  margin-top: 150px;
+
+.bawah {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  padding: 100px 15%;
-  background: #555;
-  color: #fff;
+  background: #e91e63;
+  min-height: 100px;
+  padding: 20px 50px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bawah .social_icon,
+.bawah .menu {
+  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  background: #e91e63;
+  flex-wrap: wrap;
 }
-.footer div {
-  text-align: center;
+.bawah .social_icon,
+.bawah .menu li {
+  list-style: none;
 }
-.col-2 {
-  flex-grow: 2;
-}
-.footer div h3 {
-  font-weight: 300;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
-}
-.col-1 a {
-  display: block;
-  text-decoration: none;
+.bawah .social_icon li a {
+  font-size: 2em;
   color: #fff;
-  margin-bottom: 10px;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
 }
-form input {
-  width: 400px;
-  height: 45px;
-  border-radius: 4px;
+.bawah .social_icon li a:hover {
+  transform: translateY(-10px);
+}
+.bawah .menu li a {
+  font-size: 1.2em;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+}
+.bawah .menu li a:hover {
+  opacity: 1;
+}
+.bawah p {
+  color: #fff;
   text-align: center;
-  outline: none;
-  border: none;
-}
-.social-icons {
-  font-size: 22px;
-  margin: 10px;
-  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
 }

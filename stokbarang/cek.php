@@ -3,7 +3,7 @@
 
 if(isset($_SESSION['log'])){
 
-}else {
+} else {
     header('location:login.php');
 }
 
