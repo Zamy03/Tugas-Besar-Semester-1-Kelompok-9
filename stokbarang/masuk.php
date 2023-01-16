@@ -69,8 +69,8 @@ require 'cek.php';
                                     <tr>
                                         <th>Tanggal</th>
                                         <th>Nama Barang</th>
-                                        <th>Deskripsi</th>
-                                        <th>Stock</th>
+                                        <th>Jumlah</th>
+                                        <th>Pengimput</th>
                                     </tr>
                                 </thead>
                                 <tbody>
