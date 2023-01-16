@@ -46,15 +46,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="col-12">
-              <div class="input-group">
-                <div class="form-label">
-                  <input type="email" required maxlength="50" id="email" />
-                  <label for="">Email</label>
-                </div>
-              </div>
-            </div> -->
-
             <div class="row mb-2">
               <div class="col-md-6">
                 <div class="input-group">
@@ -66,7 +57,7 @@
               </div>
               <div class="col-md-6">
                 <div class="input-group">
-                  <div class="form-float mb-3 mb-md-0">
+                  <div class="form-float mt-0">
                     <input class="control" required id="confirmpassword" type="password" maxlength="12" />
                     <label for="">Confirm Password</label>
                   </div>

@@ -26,26 +26,26 @@ if(isset($_SESSION['log'])){
           <div>
             <a href="../FrontEnd/index.html" class="close"><h3>x</h3></a>
             <h2>Sign In</h2>
-            <div class="col-lg-6">
+            <div class="col-12">
                 <div class="input-group">
-                  <div class="form-float mb-3 mb-md-0">
+                  <div class="form-float ">
                     <input type="email" required maxlength="50" id="email"/>
                     <label for="email">Email</label>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-12">
                 <div class="input-group">
-                  <div class="form-float mb-3 mb-md-0">
+                  <div class="form-float">
                     <input type="password" required id="password"  maxlength="12" />
                     <label for="password">Password</label>
                   </div>
                 </div>
 </div>
 
-            <button class="btn" href="index.php" name="login" id="login">Sign In</button>
+            <button class="btn" href="index.php" name="login" id="login"> Sign In </button>
             <div class="sign-link">
-              <p>Don't have an account?<a href="register.php" class="signUp-link">Sign Up</a></p>
+              <p>Don't have an account?<a href="register.php" class="signUp-link"> Sign Up </a></p>
             </div>
           </div>
         </div>

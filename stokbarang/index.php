@@ -12,39 +12,41 @@ require 'cek.php';
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Stock Barang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Round&family=Poppins:wght@300;500&family=Ubuntu&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/1ef1772957.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.php">ShoJo</a>
+    <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background: linear-gradient(#e91e63, #2196f3)">
         <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" style="padding-left: 10px;" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.php"><h2 style="font-family:Nova Round;">ShoJo</h2></a>
+        
 
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <!-- sidebar -->
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <nav class="sb-sidenav accordion" style="background-color:#e91e63" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
-                    <div class="nav">
+                    <div class="nav" style="color: #fff;">
                         <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="index.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Stock Barang
+                        <a class="nav-link" href="index.php" style="color: #fff;">
+                            <div class="sb-nav-link-icon" style="color: #fff;"><i class="fa-solid fa-warehouse"></i></i></div>
+                            Stock Inventory
                         </a>
-                        <a class="nav-link" href="masuk.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Barang Masuk
+                        <a class="nav-link" href="masuk.php" style="color: #fff;">
+                            <div class="sb-nav-link-icon"  style="color: #fff;"><i class="fa-solid fa-boxes-stacked"></i></div>
+                            Stock In
                         </a>
-                        <a class="nav-link" href="keluar.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Barang Keluar
+                        <a class="nav-link" href="keluar.php"style="color: #fff;">
+                            <div class="sb-nav-link-icon"  style="color: #fff;"><i class="fa-solid fa-truck-moving"></i></i></div>
+                            Stock Out
                         </a>
-                        <a class="nav-link" href="logout.php">
+                        <a class="nav-link" href="logout.php" style="color: #fff;">
                             Logout
                         </a>
                     </div>
@@ -60,7 +62,7 @@ require 'cek.php';
                         <div class="card-header">
                             <!-- To Open Modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-                                Tambah Barang
+                                Add Items
                             </button>
                         </div>
                         <div class="card-body">
@@ -68,10 +70,10 @@ require 'cek.php';
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Barang</th>
-                                        <th>Deskripsi</th>
+                                        <th>Name of Items</th>
+                                        <th>Description</th>
                                         <th>Stock</th>
-                                        <th>Aksi</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -113,7 +115,7 @@ require 'cek.php';
 
                                                     <!-- Modal Header -->
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title">Edit Barang</h4>
+                                                        <h4 class="modal-title">Edit Items</h4>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"> </button>
                                                     </div>
 
@@ -140,7 +142,7 @@ require 'cek.php';
 
                                                     <!-- Modal Header -->
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title">Hapus Barang</h4>
+                                                        <h4 class="modal-title">Delete Items</h4>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal">
                                                         </button>
                                                     </div>
@@ -148,11 +150,11 @@ require 'cek.php';
                                                     <!-- Modal body -->
                                                     <form method="post">
                                                         <div class="modal-body">
-                                                            Apakah Anda Yakin Ingin Menghapus <?= $namabarang; ?>?
+                                                        Are You Sure You Want To Delete <?= $namabarang; ?>?
                                                             <input type="hidden" name="idb" value="<?= $idb; ?>">
                                                             <br>
                                                             <br>
-                                                            <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
+                                                            <button type="submit" class="btn btn-danger" name="hapusbarang">Delete</button>
                                                         </div>
                                                     </form>
 

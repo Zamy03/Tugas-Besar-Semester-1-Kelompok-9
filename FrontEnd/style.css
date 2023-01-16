@@ -14,6 +14,9 @@ body {
   align-items: flex-end;
   min-height: 100vh;
 }
+.navbar {
+  background-color: #fff;
+}
 .brand {
   background: linear-gradient(#e91e63, #2196f3);
   -webkit-background-clip: text;
@@ -30,7 +33,30 @@ body {
   width: 100px;
   height: 40px;
 }
-
+.isi1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bar1 {
+  flex: 1 1 100px;
+}
+.stock {
+  flex: 1 1 100px;
+}
+.isi2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.stock_in {
+  flex: 1 1 100px;
+}
+.isi3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.stock_out {
+  flex: 1 1 100px;
+}
 .bawah {
   position: absolute;
   bottom: 0;
