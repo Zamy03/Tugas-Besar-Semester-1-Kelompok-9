@@ -45,7 +45,7 @@ if(isset($_SESSION['log'])){
 
             <button class="btn" href="index.php" name="login" id="login">Sign In</button>
             <div class="sign-link">
-              <p>Don't have an account?<a href="register.html" class="signUp-link">Sign Up</a></p>
+              <p>Don't have an account?<a href="register.php" class="signUp-link">Sign Up</a></p>
             </div>
           </div>
         </div>
